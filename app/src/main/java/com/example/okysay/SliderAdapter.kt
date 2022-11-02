@@ -13,7 +13,7 @@ class SliderAdapter(private val images: Array<Int>) :
         return ImageViewHolder(
             LayoutInflater
                 .from(parent.context)
-                .inflate(R.layout.slider_image_item, parent, false)
+                .inflate(R.layout.item_slider_image, parent, false)
         )
     }
 

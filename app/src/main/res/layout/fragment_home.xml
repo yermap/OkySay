@@ -35,6 +35,7 @@
                 android:src="@drawable/dc"
                 android:foreground="#96222f3e"
                 android:foregroundTintMode="src_atop" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -53,6 +54,7 @@
                 android:src="@drawable/dc"
                 android:foreground="#96222f3e"
                 android:foregroundTintMode="src_atop" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
