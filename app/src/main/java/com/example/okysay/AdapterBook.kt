@@ -1,13 +1,15 @@
 package com.example.okysay
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.okysay.databinding.ItemBookBinding
 
 
-class BookAdapter(private val images: Array<Int>) :
-    RecyclerView.Adapter<BookAdapter.ViewHolder>() {
+class AdapterBook(private val images: Array<Int>) :
+    RecyclerView.Adapter<AdapterBook.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -27,7 +29,8 @@ class BookAdapter(private val images: Array<Int>) :
 
     override fun getItemCount() = images.size
 
-    class ViewHolder(private val binding: ItemBookBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ItemBookBinding,
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(imageResource: Int) {
             binding.imageBook.setImageResource(imageResource)
         }
