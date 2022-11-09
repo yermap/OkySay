@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 
-class AdapterSlider(private val images: Array<Int>) :
+class AdapterSlider(private val images: List<Int>) :
     RecyclerView.Adapter<AdapterSlider.ImageViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {

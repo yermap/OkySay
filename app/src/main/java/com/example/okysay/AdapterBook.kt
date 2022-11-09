@@ -1,14 +1,18 @@
 package com.example.okysay
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.okysay.databinding.ItemBookBinding
 
 
-class AdapterBook(private val images: Array<Int>) :
+data class Book(
+    val image: Int,
+    val name: String,
+    val author: String,
+)
+
+class AdapterBook(private val books: List<Book>) :
     RecyclerView.Adapter<AdapterBook.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -23,17 +27,21 @@ class AdapterBook(private val images: Array<Int>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(images[position])
+        holder.bind(books[position])
     }
 
 
-    override fun getItemCount() = images.size
+    override fun getItemCount() = books.size
 
-    class ViewHolder(private val binding: ItemBookBinding,
+    class ViewHolder(
+        private val binding: ItemBookBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(imageResource: Int) {
-            binding.imageBook.setImageResource(imageResource)
+        fun bind(book: Book) {
+            binding.imageBook.setImageResource(book.image)
+            binding.textBookAuthor.text = book.author
+            binding.textBookName.text = book.name
         }
+
     }
 
 

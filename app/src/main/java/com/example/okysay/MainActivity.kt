@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.home -> replaceFragment(Home())
                 R.id.player -> replaceFragment(Player())
                 R.id.myBooks -> replaceFragment(MyBooks())
-                else -> {}
+               else -> {}
             }
             true
         }

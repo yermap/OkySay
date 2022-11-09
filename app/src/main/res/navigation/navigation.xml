@@ -9,20 +9,17 @@
         android:id="@+id/hits2"
         android:name="com.example.okysay.Hits"
         android:label="fragment_hits"
-        tools:layout="@layout/fragment_hits" >
-    </fragment>
+        tools:layout="@layout/fragment_hits" />
     <fragment
         android:id="@+id/home2"
         android:name="com.example.okysay.Home"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/new1"
         android:name="com.example.okysay.New"
         android:label="fragment_new"
-        tools:layout="@layout/fragment_new" >
-    </fragment>
+        tools:layout="@layout/fragment_new" />
     <fragment
         android:id="@+id/player2"
         android:name="com.example.okysay.Player"
@@ -38,5 +35,9 @@
         android:name="com.example.okysay.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
-    <fragment android:id="@+id/placeholder" />
+    <fragment
+        android:id="@+id/bookInfo"
+        android:name="com.example.okysay.bookInfo"
+        android:label="fragment_book_info"
+        tools:layout="@layout/fragment_book_info" />
 </navigation>
