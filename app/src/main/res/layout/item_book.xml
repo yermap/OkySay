@@ -24,11 +24,12 @@
 
     <TextView
         android:id="@+id/text_book_author"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Джон Кехо"
-        app:layout_constraintTop_toBottomOf="@+id/image_book" />
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintBottom_toBottomOf="@+id/image_book"
+        app:layout_constraintTop_toTopOf="@+id/image_book"
+        tools:text="Джон Кехо" />
 
     <TextView
         android:id="@+id/text_book_name"
