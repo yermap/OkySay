@@ -6,16 +6,20 @@
         <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/drawable/custom_border.xml" value="0.113" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/activity_main.xml" value="0.10309017223910841" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/book_item.xml" value="0.2" />
-        <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/fragment_hits.xml" value="0.176" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/fragment_book_info.xml" value="0.11005434782608696" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/fragment_hits.xml" value="0.264" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/fragment_my_books.xml" value="0.12158054711246201" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/fragment_new.xml" value="0.1" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/fragment_player.xml" value="0.12158054711246201" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/grid_item_list.xml" value="0.1" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/image_container.xml" value="0.1" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/image_slider_item.xml" value="0.1" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/item_book.xml" value="0.25" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/item_slider_image.xml" value="0.25" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/login.xml" value="0.1" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/layout/slider_image_item.xml" value="0.1" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/OkySay/app/src/main/res/menu/main_menu.xml" value="0.1" />
       </map>
     </option>
   </component>
