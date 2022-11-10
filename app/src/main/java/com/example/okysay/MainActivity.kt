@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.okysay.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,28 +19,30 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        binding.bottomNavigationView.setOnItemSelectedListener {
-
-            when(it.itemId){
-                R.id.hits -> replaceFragment(Hits())
-                R.id.news -> replaceFragment(New())
-                R.id.home -> replaceFragment(Home())
-                R.id.player -> replaceFragment(Player())
-                R.id.myBooks -> replaceFragment(MyBooks())
-                else -> {}
-            }
-            true
-        }
-        binding.bottomNavigationView.selectedItemId = R.id.home
+        val navController = (supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment).navController
+        binding.bottomNavigationView.setupWithNavController(navController)
+//        binding.bottomNavigationView.setOnItemSelectedListener {
+//
+//            when(it.itemId){
+//                R.id.hits -> replaceFragment(Hits())
+//                R.id.news -> replaceFragment(New())
+//                R.id.home -> replaceFragment(Home())
+//                R.id.player -> replaceFragment(Player())
+//                R.id.myBooks -> replaceFragment(MyBooks())
+//                else -> {}
+//            }
+//            true
+//        }
+//        binding.bottomNavigationView.selectedItemId = R.id.home
     }
-
-    private fun replaceFragment(fragment : Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout,fragment)
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
-    }
+//
+//    private fun replaceFragment(fragment : Fragment) {
+//        val fragmentManager = supportFragmentManager
+//        val fragmentTransaction = fragmentManager.beginTransaction()
+//        fragmentTransaction.replace(R.id.frame_layout,fragment)
+//        fragmentTransaction.addToBackStack(null)
+//        fragmentTransaction.commit()
+//    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)

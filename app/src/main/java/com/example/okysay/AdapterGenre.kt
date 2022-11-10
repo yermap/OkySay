@@ -11,7 +11,10 @@ data class Genre(
     val name: String,
 )
 
-class AdapterGenre(private val genre: List<Genre>) :
+class AdapterGenre(
+    private val genre: List<Genre>,
+    private val onItemClicked: (item: Genre) -> Unit,
+) :
     RecyclerView.Adapter<AdapterGenre.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,15 +35,15 @@ class AdapterGenre(private val genre: List<Genre>) :
 
     override fun getItemCount() = genre.size
 
-    class ViewHolder(
+    inner class ViewHolder(
         private val binding: ItemGenreBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(genre: Genre) {
             binding.imageGenre.setImageResource(genre.image)
             binding.textBookGenre.text = genre.name
+            binding.root.setOnClickListener {
+                onItemClicked(genre)
+            }
         }
-
     }
-
-
 }
