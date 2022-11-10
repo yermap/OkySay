@@ -1,175 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="411dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="60dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/elon_musk"
-                android:foreground="#96222f3e"
-                android:foregroundTintMode="src_atop"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="80dp"
-                android:text="Science"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="40dp" />
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="411dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="160dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/dc"
-                android:foreground="#96222f3e"
-                android:foregroundTintMode="src_atop" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_genre"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginTop="50dp"
+        app:spanCount="1">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="160dp"
-                android:text="Science"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="40dp" />
+    </androidx.recyclerview.widget.RecyclerView>
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="411dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="240dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/dc"
-                android:foreground="#96222f3e"
-                android:foregroundTintMode="src_atop" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="240dp"
-                android:text="Science"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="40dp" />
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="411dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="320dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/dc"
-                android:foreground="#96222f3e"
-                android:foregroundTintMode="src_atop" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="320dp"
-                android:text="Science"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="40dp" />
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="411dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="400dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/dc"
-                android:foreground="#96222f3e"
-                android:foregroundTintMode="src_atop" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="400dp"
-                android:text="Science"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="40dp" />
 
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="411dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="480dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/dc"
-                android:foreground="#96222f3e"
-                android:foregroundTintMode="src_atop" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="480dp"
-                android:text="Science"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="40dp" />
 
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="411dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="560dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/dc"
-                android:foreground="#96222f3e"
-                android:foregroundTintMode="src_atop" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="560dp"
-                android:text="Science"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="40dp" />
+    <!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView1"-->
+<!--                android:layout_width="411dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="60dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/elon_musk"-->
+<!--                android:foreground="#96222f3e"-->
+<!--                android:foregroundTintMode="src_atop"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginTop="80dp"-->
+<!--                android:text="Business"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="40dp" />-->
 
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="411dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="640dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/dc"
-                android:foreground="#96222f3e"
-                android:foregroundTintMode="src_atop" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="640dp"
-                android:text="Science"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="40dp" />
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView2"-->
+<!--                android:layout_width="411dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="160dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/dc"-->
+<!--                android:foreground="#96222f3e"-->
+<!--                android:foregroundTintMode="src_atop" />-->
 
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="411dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="720dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/elon_musk"
-                android:foreground="#96222f3e"
-                android:foregroundTintMode="src_atop" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="720dp"
-                android:text="Science"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="40dp" />
-        </RelativeLayout>
-</ScrollView>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginTop="160dp"-->
+<!--                android:text="Love novels"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="40dp" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView3"-->
+<!--                android:layout_width="411dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="240dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/dc"-->
+<!--                android:foreground="#96222f3e"-->
+<!--                android:foregroundTintMode="src_atop" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginTop="240dp"-->
+<!--                android:text="Psychology"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="40dp" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView4"-->
+<!--                android:layout_width="411dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="320dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/dc"-->
+<!--                android:foreground="#96222f3e"-->
+<!--                android:foregroundTintMode="src_atop" />-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginTop="320dp"-->
+<!--                android:text="Fairy tales"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="40dp" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView5"-->
+<!--                android:layout_width="411dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="400dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/dc"-->
+<!--                android:foreground="#96222f3e"-->
+<!--                android:foregroundTintMode="src_atop" />-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginTop="400dp"-->
+<!--                android:text="Fantasy"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="40dp" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView6"-->
+<!--                android:layout_width="411dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="480dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/dc"-->
+<!--                android:foreground="#96222f3e"-->
+<!--                android:foregroundTintMode="src_atop" />-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginTop="480dp"-->
+<!--                android:text="Detective"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="40dp" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView7"-->
+<!--                android:layout_width="411dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="560dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/dc"-->
+<!--                android:foreground="#96222f3e"-->
+<!--                android:foregroundTintMode="src_atop" />-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginTop="560dp"-->
+<!--                android:text="Comics"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="40dp" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView8"-->
+<!--                android:layout_width="411dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="640dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/dc"-->
+<!--                android:foreground="#96222f3e"-->
+<!--                android:foregroundTintMode="src_atop" />-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginTop="640dp"-->
+<!--                android:text="Manga"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="40dp" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView9"-->
+<!--                android:layout_width="411dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="720dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/elon_musk"-->
+<!--                android:foreground="#96222f3e"-->
+<!--                android:foregroundTintMode="src_atop" />-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginTop="720dp"-->
+<!--                android:text="AudioBooks"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="40dp" />-->
+<!--        </RelativeLayout>-->
+<!--</ScrollView>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
