@@ -12,7 +12,10 @@ data class Book(
     val author: String,
 )
 
-class AdapterBook(private val books: List<Book>) :
+class AdapterBook(
+    private val book: List<Book>,
+    private val onItemClicked: (item: Book) -> Unit,
+) :
     RecyclerView.Adapter<AdapterBook.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -27,22 +30,22 @@ class AdapterBook(private val books: List<Book>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(books[position])
+        holder.bind(book[position])
     }
 
 
-    override fun getItemCount() = books.size
+    override fun getItemCount() = book.size
 
-    class ViewHolder(
+    inner class ViewHolder(
         private val binding: ItemBookBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(book: Book) {
             binding.imageBook.setImageResource(book.image)
             binding.textBookAuthor.text = book.author
             binding.textBookName.text = book.name
+            binding.root.setOnClickListener {
+                onItemClicked(book)
+            }
         }
-
     }
-
-
 }

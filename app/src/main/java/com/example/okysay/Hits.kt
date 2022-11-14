@@ -5,8 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.example.okysay.databinding.FragmentHitsBinding
 
 
 class Hits : Fragment() {
@@ -17,14 +20,6 @@ class Hits : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_hits, container, false)
-//        val bookInfo: Button = view.findViewById(R.id.image_book)
-//
-//        bookInfo.setOnClickListener {
-//            val fragment = bookInfo()
-//            val transaction = fragmentManager?.beginTransaction()
-//            transaction?.replace(R.id.image_book, fragment)?.commit()
-//        }
-//        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -32,7 +27,9 @@ class Hits : Fragment() {
         val viewpager: ViewPager2 = view.findViewById(R.id.viewpager)
         viewpager.adapter = AdapterSlider(books.map{it.image})
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_books)
-        recyclerView.adapter = AdapterBook(books)
+        recyclerView.adapter = AdapterBook(books) { book ->
+            findNavController().navigate(R.id.bookInfo)
+        }
     }
 
     companion object {
@@ -53,7 +50,5 @@ class Hits : Fragment() {
                 author = "Steve Jobs",
             )
         )
-//        private val images: Array<Int> =
-//            arrayOf(R.drawable.elon_musk, R.drawable.dc, R.drawable.elon_musk)
     }
 }
