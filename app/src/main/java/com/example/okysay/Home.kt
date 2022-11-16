@@ -23,38 +23,38 @@ class Home : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_genre)
         recyclerView.adapter = AdapterGenre(genres) { genre ->
-            findNavController().navigate(R.id.news)
+            findNavController().navigate(R.id.hits)
         }
     }
 
     companion object {
         private val genres = listOf(
             Genre(
-                image = R.drawable.dc,
-                name = "Elon Musk",
+                image = R.drawable.bus,
+                name = "Business-books",
             ),
             Genre(
-                image = R.drawable.dc,
-                name = "Elon Musk",
+                image = R.drawable.love,
+                name = "Love novels",
             ),
             Genre(
-                image = R.drawable.dc,
-                name = "Elon Musk",
+                image = R.drawable.phychologggy,
+                name = "Psychology",
             ),
             Genre(
-                image = R.drawable.dc,
-                name = "Elon Musk",
+                image = R.drawable.fairy,
+                name = "Fairy tales",
             ),
             Genre(
-                image = R.drawable.dc,
-                name = "Elon Musk",
+                image = R.drawable.philosofy,
+                name = "Philosophy",
             ), Genre(
-                image = R.drawable.dc,
-                name = "Elon Musk",
+                image = R.drawable.manga,
+                name = "Manga",
             ),
             Genre(
                 image = R.drawable.dc,
-                name = "Elon Musk",
+                name = "Comics",
             )
         )
     }
