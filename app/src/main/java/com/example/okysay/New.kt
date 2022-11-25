@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
 
 
 class New : Fragment() {
@@ -23,25 +22,27 @@ class New : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_new_books)
-        recyclerView.adapter = AdapterNewBook(newBook)
+        recyclerView.adapter = AdapterNewBook(newBook) {
+            findNavController().navigate(R.id.newType)
+        }
     }
 
     companion object {
         private val newBook = listOf(
             NewBook(
-                image = R.drawable.elon_musk,
-                name = "Elon Musk",
-                author = "Steve Jobs",
+                image = R.drawable._666018271_49,
+                name = "Наумовна.Начало",
+                author = "Нина Князькова",
             ),
             NewBook(
-                image = R.drawable.dc,
-                name = "Elon Musk",
-                author = "Steve Jobs",
+                image = R.drawable._666018271_49,
+                name = "Наумовна.Начало",
+                author = "Нина Князькова",
             ),
             NewBook(
-                image = R.drawable.elon_musk,
-                name = "Elon Musk",
-                author = "Steve Jobs",
+                image = R.drawable._666018271_49,
+                name = "Наумовна.Начало",
+                author = "Нина Князькова",
             )
         )
 //        private val images: Array<Int> =
