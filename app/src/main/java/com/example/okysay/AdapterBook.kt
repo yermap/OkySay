@@ -16,27 +16,17 @@ import com.example.okysay.databinding.ItemBookBinding
 //)
 
 class AdapterBook(
-//    private val book: List<BookItemModel>,
     private val onItemClicked: (BookItemModel) -> Unit
 ) : RecyclerView.Adapter<AdapterBook.ViewHolder>() {
 
     private val mList = mutableListOf<BookItemModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterBook.ViewHolder {
-
-//        return ViewHolder(
-//            ItemBookBinding.inflate(
-//                LayoutInflater
-//                    .from(parent.context),
-//                parent, false
-//            )
-//        )
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_book, parent, false)
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: AdapterBook.ViewHolder, position: Int) {
-//        holder.bind(book[position])
         val model = mList[position]
 
         holder.itemAuthor.text = model.author
@@ -46,7 +36,6 @@ class AdapterBook(
             onItemClicked(model)
         }
     }
-
 
     override fun getItemCount(): Int {
         return mList.size
@@ -69,14 +58,5 @@ class AdapterBook(
             itemTitle = itemView.findViewById(R.id.text_book_name)
             itemAuthor = itemView.findViewById(R.id.text_book_author)
         }
-
-//        fun bind(book: BookItemModel) {
-////            binding.imageBook.setImageResource(book.image)
-////            binding.textBookAuthor.text = book.author
-////            binding.textBookName.text = book.name
-//            binding.root.setOnClickListener {
-//                onItemClicked(book)
-//            }
-//        }
     }
 }
