@@ -9,4 +9,12 @@ class Datasource {
 
         )
     }
+
+    fun loadSliderImageModels(): List<SliderItemModel> {
+        return listOf<SliderItemModel>(
+            SliderItemModel(R.drawable.elon_musk),
+            SliderItemModel(R.drawable.dc),
+            SliderItemModel(R.drawable.elon_musk),
+        )
+    }
 }

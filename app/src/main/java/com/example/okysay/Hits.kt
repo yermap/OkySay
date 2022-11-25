@@ -19,25 +19,35 @@ class Hits : Fragment() {
 
     private val viewModel: BookViewModel by viewModels()
     private var adapter: AdapterBook? = null
+    private val viewModel2: SliderViewModel by viewModels()
+    private var adapterSlider: AdapterSlider? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-//        return inflater.inflate(R.layout.fragment_hits, container, false)
         _binding = FragmentHitsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
-        val viewpager: ViewPager2 = itemView.findViewById(R.id.viewpager)
-        viewpager.adapter = AdapterSlider(books.map{it.image})
+//        val viewpager: ViewPager2 = itemView.findViewById(R.id.viewpager)
+//        viewpager.adapter = AdapterSlider(books.map{it.image})
 //        val recyclerView: RecyclerView = itemView.findViewById(R.id.recycler_books)
 //        recyclerView.adapter = AdapterBook(books) { book ->
 //            findNavController().navigate(R.id.bookInfo)
 //        }
+        binding.viewpager.adapter = adapterSlider
+        binding.viewpager
+        viewModel2.data.observe(viewLifecycleOwner) {
+            newSlider ->
+            if (newSlider != null) {
+                adapterSlider?.setData(newSlider)
+            }
+        }
+
         adapter = AdapterBook { model ->
             this@Hits.findNavController().navigate(R.id.bookInfo)
         }
@@ -49,25 +59,5 @@ class Hits : Fragment() {
                 adapter?.setData(newCount)
             }
         }
-    }
-
-    companion object {
-        private val books = listOf(
-            BookItemModel(
-                image = R.drawable.elon_musk,
-                name = "Elon Musk",
-                author = "Steve Jobs",
-            ),
-            BookItemModel(
-                image = R.drawable.dc,
-                name = "Elon Musk",
-                author = "Steve Jobs",
-            ),
-            BookItemModel(
-                image = R.drawable.elon_musk,
-                name = "Elon Musk",
-                author = "Steve Jobs",
-            )
-        )
     }
 }
