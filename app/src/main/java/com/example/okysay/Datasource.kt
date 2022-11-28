@@ -17,4 +17,12 @@ class Datasource {
             SliderItemModel(R.drawable.elon_musk),
         )
     }
+
+    fun loadMyBookItemModels(): List<MyBookitemModel> {
+        return listOf<MyBookitemModel>(
+            MyBookitemModel(R.drawable.never, "Кейт Феррацци", "Никогда не ешьте в одиночку"),
+            MyBookitemModel(R.drawable.weeks, "Брайан Моран,Майкл Леннингтон", "12 недель в году"),
+            MyBookitemModel(R.drawable.minutes, "Питер Брегман", "18 минут"),
+        )
+    }
 }
