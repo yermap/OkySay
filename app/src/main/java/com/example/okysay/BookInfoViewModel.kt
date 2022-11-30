@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MyBookViewModel : ViewModel() {
-    private val _data = MutableLiveData<List<MyBookitemModel>>(emptyList())
-    val data: LiveData<List<MyBookitemModel>> get() = _data
+class BookInfoViewModel : ViewModel() {
+    private val _data = MutableLiveData<List<BookInfoItemModel>>(emptyList())
+    val data: LiveData<List<BookInfoItemModel>> get() = _data
     private val myData = Datasource() // переменная для данных
 
     init {
@@ -14,6 +14,6 @@ class MyBookViewModel : ViewModel() {
     }
 
     private fun itemCount() {
-        _data.value = myData.loadMyBookItemModels() // данныйды шыгаруга указание
+        _data.value = myData.loadBookInfoItemModels() // данныйды шыгаруга указание
     }
 }

@@ -3,6 +3,7 @@ package com.example.okysay
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -29,6 +30,10 @@ class AdapterMyBooks(
         holder.itemView.setOnClickListener {
             onItemClicked(model)
         }
+
+        holder.itemButton.setOnClickListener {
+            onItemClicked(model)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -46,11 +51,13 @@ class AdapterMyBooks(
         var itemImage: ImageView
         var itemTitle: TextView
         var itemAuthor: TextView
+        var itemButton: Button
 
         init {
             itemImage = itemView.findViewById(R.id.image_my_books)
             itemTitle = itemView.findViewById(R.id.text_my_books_name)
             itemAuthor = itemView.findViewById(R.id.text_my_books_author)
+            itemButton = itemView.findViewById(R.id.button)
         }
     }
 }
