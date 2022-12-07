@@ -35,4 +35,9 @@
         android:name="com.example.okysay.bookInfo"
         android:label="fragment_book_info"
         tools:layout="@layout/fragment_book_info" />
+    <fragment
+        android:id="@+id/bookGenreDescription"
+        android:name="com.example.okysay.BookGenreDescription"
+        android:label="book_genre_description"
+        tools:layout="@layout/book_genre_description" />
 </navigation>

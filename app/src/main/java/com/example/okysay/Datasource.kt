@@ -18,6 +18,18 @@ class Datasource {
         )
     }
 
+    fun loadHomeBookItemModels(): List<HomeBookItemModel> {
+        return listOf<HomeBookItemModel>(
+            HomeBookItemModel(R.drawable.bus, "Business-books"),
+            HomeBookItemModel(R.drawable.love, "Love novels"),
+            HomeBookItemModel(R.drawable.phychologggy, "Psychology"),
+            HomeBookItemModel(R.drawable.fairy, "Fairy tales"),
+            HomeBookItemModel(R.drawable.philosofy, "Philosophy"),
+            HomeBookItemModel(R.drawable.manga, "Manga"),
+            HomeBookItemModel(R.drawable.dc, "Comics"),
+        )
+    }
+
     fun loadMyBookItemModels(): List<MyBookitemModel> {
         return listOf<MyBookitemModel>(
             MyBookitemModel(R.drawable.never, "Кейт Феррацци", "Никогда не ешьте в одиночку"),
