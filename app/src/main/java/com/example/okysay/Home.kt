@@ -32,7 +32,7 @@ class Home : Fragment() {
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
         adapter = AdapterGenre { model ->
-            this@Home.findNavController().navigate(R.id.hits)
+            this@Home.findNavController().navigate(R.id.bookGenreDescription)
         }
         binding.recyclerGenre.adapter = adapter
         binding.recyclerGenre.setLayoutManager(GridLayoutManager(activity, 1))
