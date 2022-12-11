@@ -1,5 +1,8 @@
 package com.example.okysay
 
+import com.example.okysay.viewmodel.BookItemModel
+import com.example.okysay.viewmodel.SliderItemModel
+
 class Datasource {
 
     fun loadBookItemModels(): List<BookItemModel> {

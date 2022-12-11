@@ -1,4 +1,4 @@
-package com.example.okysay
+package com.example.okysay.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.okysay.AdapterGenre
+import com.example.okysay.Genre
+import com.example.okysay.R
 
 
 class Home : Fragment() {

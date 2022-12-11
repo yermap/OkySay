@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/hits"
-        android:name="com.example.okysay.Hits"
+        android:name="com.example.okysay.fragments.Hits"
         android:label="fragment_hits"
         tools:layout="@layout/fragment_hits" />
     <fragment
         android:id="@+id/home"
-        android:name="com.example.okysay.Home"
+        android:name="com.example.okysay.fragments.Home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
