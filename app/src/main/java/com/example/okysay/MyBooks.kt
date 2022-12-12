@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.okysay.databinding.FragmentMyBooksBinding
 
 
@@ -15,7 +16,7 @@ class MyBooks : Fragment() {
     private var _binding: FragmentMyBooksBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: MyBookViewModel by viewModels()
+    private val viewModel: MyBookViewModel by viewModels() // giving the value
     private var adapter: AdapterMyBooks? = null
 
     override fun onCreateView(
@@ -31,10 +32,10 @@ class MyBooks : Fragment() {
         super.onViewCreated(itemView, savedInstanceState)
 
         adapter = AdapterMyBooks { model ->
-            this@MyBooks.findNavController().navigate(R.id.bookInfo)
+            this@MyBooks.findNavController().navigate(R.id.bookInfo) //link to bookinfo
         }
         binding.recyclerMyBooks.adapter = adapter
-        binding.recyclerMyBooks.setLayoutManager(GridLayoutManager(activity, 1))
+        binding.recyclerMyBooks.setLayoutManager(LinearLayoutManager(activity))
         viewModel.data.observe(viewLifecycleOwner) {
             newMyBook ->
             if (newMyBook != null) {

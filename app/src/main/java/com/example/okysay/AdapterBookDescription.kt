@@ -1,49 +1,50 @@
 package com.example.okysay
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.okysay.databinding.ItemBookDescriptionBinding
+import kotlinx.coroutines.NonDisposableHandle.parent
 
-
-data class BookDescription(
-    val image: Int,
-    val name: String,
-    val author: String,
-    val book_time: String,
-)
 
 class AdapterBookDescription(
-    private val bookDescription: List<BookDescription>,
-) :
-    RecyclerView.Adapter<AdapterBookDescription.ViewHolder>() {
+    private val onItemClicked: (BookInfoItemModel) -> Unit
+) : RecyclerView.Adapter<AdapterBookDescription.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    private val mList = mutableListOf<BookInfoItemModel>()
 
-        return ViewHolder(
-            ItemBookDescriptionBinding.inflate(
-                LayoutInflater
-                    .from(parent.context),
-                parent, false
-            )
-        )
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterBookDescription.ViewHolder {
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_book_description, parent, false)
+        return ViewHolder(v)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(bookDescription[position])
+    override fun onBindViewHolder(holder: AdapterBookDescription.ViewHolder, position: Int) {
+        val model = mList[position]
+
+        holder.itemText.text = model.name
+        holder.itemView.setOnClickListener {
+            onItemClicked(model)
+        }
     }
 
+    override fun getItemCount(): Int {
+        return mList.size
+    }
 
-    override fun getItemCount() = bookDescription.size
+    fun setData(bookDesc: List<BookInfoItemModel>) {
+        mList.clear()
+        mList.addAll(bookDesc)
+        notifyDataSetChanged()
+    }
 
-    inner class ViewHolder(
-        private val binding: ItemBookDescriptionBinding,
-    ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(bookDescription: BookDescription) {
-            binding.imageBook2.setImageResource(bookDescription.image)
-            binding.textBookAuthor2.text = bookDescription.author
-            binding.textBookName2.text = bookDescription.name
-            binding.textBookTime.text = bookDescription.book_time
+    inner class ViewHolder(itemView: View)
+        : RecyclerView.ViewHolder(itemView) {
+        var itemText: TextView
+
+        init {
+            itemText = itemView.findViewById(R.id.neverEat)
         }
     }
 }
