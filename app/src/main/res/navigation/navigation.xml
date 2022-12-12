@@ -40,4 +40,9 @@
         android:name="com.example.okysay.NewType"
         android:label="fragment_new_type"
         tools:layout="@layout/fragment_new_type" />
+    <fragment 
+        android:id="@+id/bookGenreDescription"
+        android:name="com.example.okysay.BookGenreDescription"
+        android:label="book_genre_description"
+        tools:layout="@layout/book_genre_description" />
 </navigation>
