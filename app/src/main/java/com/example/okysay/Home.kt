@@ -44,35 +44,5 @@ class Home : Fragment() {
         }
     }
 
-//    companion object {
-//        private val genres = listOf(
-//            Genre(
-//                image = R.drawable.bus,
-//                name = "Business-books",
-//            ),
-//            Genre(
-//                image = R.drawable.love,
-//                name = "Love novels",
-//            ),
-//            Genre(
-//                image = R.drawable.phychologggy,
-//                name = "Psychology",
-//            ),
-//            Genre(
-//                image = R.drawable.fairy,
-//                name = "Fairy tales",
-//            ),
-//            Genre(
-//                image = R.drawable.philosofy,
-//                name = "Philosophy",
-//            ), Genre(
-//                image = R.drawable.manga,
-//                name = "Manga",
-//            ),
-//            Genre(
-//                image = R.drawable.dc,
-//                name = "Comics",
-//            )
-//        )
-//    }
+
 }
