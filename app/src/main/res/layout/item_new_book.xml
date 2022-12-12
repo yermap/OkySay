@@ -12,8 +12,8 @@
 
     <ImageView
         android:id="@+id/image_new_book"
-        android:layout_width="186dp"
-        android:layout_height="283dp"
+        android:layout_width="207dp"
+        android:layout_height="256dp"
         android:layout_weight="1"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
@@ -25,29 +25,31 @@
 
     <TextView
         android:id="@+id/text_new_book_author"
-        android:layout_width="151dp"
+        android:layout_width="152dp"
         android:layout_height="22dp"
+        android:layout_marginTop="4dp"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-        app:layout_constraintBottom_toBottomOf="@+id/image_new_book"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/image_new_book"
-        app:layout_constraintVertical_bias="0.421"
+        app:layout_constraintTop_toBottomOf="@+id/image_new_book"
+        tools:layout_editor_absoluteX="44dp"
         tools:text="Нина Князькова" />
 
     <TextView
         android:id="@+id/text_new_book_name"
-        android:layout_width="151dp"
-        android:layout_height="27dp"
+        android:layout_width="161dp"
+        android:layout_height="26dp"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_new_book_author"
+        tools:layout_editor_absoluteX="35dp"
         tools:text="Наумовна.Начало" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="153dp"
-        android:layout_height="48dp"
+        android:layout_width="170dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
         android:text="INTRO TO"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_new_book_name" />
+        app:backgroundTint="#9D51AA"
+        app:layout_constraintTop_toBottomOf="@+id/text_new_book_name"
+        tools:layout_editor_absoluteX="11dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

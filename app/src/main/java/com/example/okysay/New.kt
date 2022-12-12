@@ -5,47 +5,42 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.okysay.databinding.FragmentNewBinding
 
 
 class New : Fragment() {
+    private var _binding: FragmentNewBinding? = null
+    private val binding get() = _binding!!
+
+    private val viewModel: NewBookViewModel by viewModels()
+    private var adapter: AdapterNewBook? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_new, container, false)
+        _binding = FragmentNewBinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val recyclerView: RecyclerView = view.findViewById(R.id.recycler_new_books)
-        recyclerView.adapter = AdapterNewBook(newBook) {
-            findNavController().navigate(R.id.newType)
+    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(itemView, savedInstanceState)
+
+        adapter = AdapterNewBook { model ->
+            this@New.findNavController().navigate(R.id.newType)
         }
-    }
-
-    companion object {
-        private val newBook = listOf(
-            NewBook(
-                image = R.drawable._666018271_49,
-                name = "Наумовна.Начало",
-                author = "Нина Князькова",
-            ),
-            NewBook(
-                image = R.drawable._666018271_49,
-                name = "Наумовна.Начало",
-                author = "Нина Князькова",
-            ),
-            NewBook(
-                image = R.drawable._666018271_49,
-                name = "Наумовна.Начало",
-                author = "Нина Князькова",
-            )
-        )
-//        private val images: Array<Int> =
-//            arrayOf(R.drawable.elon_musk, R.drawable.dc, R.drawable.elon_musk)
+        binding.recyclerNewBooks.adapter = adapter
+        binding.recyclerNewBooks.setLayoutManager(GridLayoutManager(activity, 2))
+        viewModel.data.observe(viewLifecycleOwner) {
+                newBook ->
+            if (newBook != null) {
+                adapter?.setData(newBook)
+            }
+        }
     }
 }
