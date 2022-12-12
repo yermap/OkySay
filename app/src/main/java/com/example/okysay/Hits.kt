@@ -27,7 +27,7 @@ class Hits : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHitsBinding.inflate(inflater, container, false)
+        return inflater.inflate(R.layout.fragment_hits, container, false)
         return binding.root
     }
 

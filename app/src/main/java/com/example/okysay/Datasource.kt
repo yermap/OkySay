@@ -18,6 +18,20 @@ class Datasource {
         )
     }
 
+    fun loadNewBookModels(): List<NewBookItemModel> {
+        return listOf<NewBookItemModel>(
+            NewBookItemModel(R.drawable._666018271_49, "Наумовна.Начало", "Нина Князькова"),
+            NewBookItemModel(R.drawable.serdse, "Северного Ликана", "Мария Ерова "),
+            NewBookItemModel(R.drawable.msg_1305588499_1633, "Токсичный позитив", "Уитни Гудман "),
+            NewBookItemModel(R.drawable.msg_1305588499_1634, "Мандалы женской силы", "Регина Жиляева "),
+            NewBookItemModel(R.drawable.gresia, "Книга первая. Жить!", "Мария Ерова"),
+            NewBookItemModel(R.drawable.povel, "Повелитель Хаоса", "Александр Светлый"),
+            NewBookItemModel(R.drawable.msg_1305588499_1635, "13 осколков личности.", "Егор Горд"),
+            NewBookItemModel(R.drawable.msg_1305588499_1636, "Воля к смыслу.", "В. Франкл"),
+
+
+            )}
+            
     fun loadHomeBookItemModels(): List<HomeBookItemModel> {
         return listOf<HomeBookItemModel>(
             HomeBookItemModel(R.drawable.bus, "Business-books"),

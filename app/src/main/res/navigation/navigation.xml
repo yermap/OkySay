@@ -36,6 +36,11 @@
         android:label="fragment_book_info"
         tools:layout="@layout/fragment_book_info" />
     <fragment
+        android:id="@+id/newType"
+        android:name="com.example.okysay.NewType"
+        android:label="fragment_new_type"
+        tools:layout="@layout/fragment_new_type" />
+    <fragment 
         android:id="@+id/bookGenreDescription"
         android:name="com.example.okysay.BookGenreDescription"
         android:label="book_genre_description"
