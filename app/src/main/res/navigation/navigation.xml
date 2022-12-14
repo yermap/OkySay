@@ -17,17 +17,17 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/news"
-        android:name="com.example.okysay.New"
+        android:name="com.example.okysay.fragments.New"
         android:label="fragment_new"
         tools:layout="@layout/fragment_new" />
     <fragment
         android:id="@+id/player"
-        android:name="com.example.okysay.Player"
+        android:name="com.example.okysay.fragments.Player"
         android:label="fragment_player"
         tools:layout="@layout/fragment_player" />
     <fragment
         android:id="@+id/myBooks"
-        android:name="com.example.okysay.MyBooks"
+        android:name="com.example.okysay.fragments.MyBooks"
         android:label="fragment_my_books"
         tools:layout="@layout/fragment_my_books" />
     <fragment

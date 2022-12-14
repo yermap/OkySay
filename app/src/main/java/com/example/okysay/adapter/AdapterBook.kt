@@ -19,29 +19,19 @@ class AdapterBook(
 
     override fun onCreateViewHolder(
         parent: ViewGroup, viewType: Int): ViewHolder {
-        val layoutInflater =
-            LayoutInflater.from(parent.context)
-        val view = layoutInflater
-            .inflate(R.layout.item_book,
-                parent, false)
-        return ViewHolder(view)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_book, parent, false)
+        return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        val model = mList[position]
-//        holder.bind(model)
+        val model = mList[position]
 
-        val model = holder.itemView.context.resources
-        holder.itemAuthor.text
-        holder.itemImage.setImageResource(when (model.author) {
-
-        })
-//        holder.itemAuthor.text = model.author
-//        holder.itemTitle.text = model.name
-//        holder.itemImage.setImageResource(model.image)
-//        holder.itemView.setOnClickListener {
-//            onItemClicked(model)
-//        }
+        holder.itemAuthor.text = model.author
+        holder.itemTitle.text = model.name
+        holder.itemImage.setImageResource(model.image)
+        holder.itemView.setOnClickListener {
+            onItemClicked(model)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -64,23 +54,17 @@ class AdapterBook(
 //        }
 //    }
 
-    private fun ViewHolder.bind(item: BookData) {
 
-    }
-
-    class ViewHolder(itemView: View)
+    inner class ViewHolder(itemView: View)
         : RecyclerView.ViewHolder(itemView) {
-        val itemImage: ImageView = itemView.findViewById(R.id.image_book)
-        val itemTitle: TextView = itemView.findViewById(R.id.text_book_name)
-        val itemAuthor: TextView = itemView.findViewById(R.id.text_book_author)
-    }
+        var itemImage: ImageView
+        var itemTitle: TextView
+        var itemAuthor: TextView
 
-    companion object {
-        fun from(parent: ViewGroup): ViewHolder {
-            val layoutInflater = LayoutInflater.from(parent.context)
-            val view = layoutInflater
-                .inflate(R.layout.item_book, parent, false)
-            return ViewHolder(view)
+        init {
+            itemImage = itemView.findViewById(R.id.image_book)
+            itemTitle = itemView.findViewById(R.id.text_book_name)
+            itemAuthor = itemView.findViewById(R.id.text_book_author)
         }
     }
 }

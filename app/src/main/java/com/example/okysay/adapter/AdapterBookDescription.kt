@@ -1,4 +1,4 @@
-package com.example.okysay
+package com.example.okysay.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

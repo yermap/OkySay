@@ -14,7 +14,6 @@ class BookViewModel(
     application: Application) : AndroidViewModel(application) {
 
     init {
-
         loadInitialBooks()
     }
         private val _data = MutableLiveData<List<BookItemModel>>(emptyList())
@@ -49,16 +48,16 @@ class BookViewModel(
     }
 
             init {
-//            itemCount()
-                initializeBook()
+            itemCount()
+//                initializeBook()
             }
 
-            //        private fun itemCount() {
-//            _data.value = myData.loadBookItemModels()
-//        }
-            private fun initializeBook() {
-                viewModelScope.launch {
-                    book.value = getBookFromDatabase()
-                }
-            }
+                    private fun itemCount() {
+            _data.value = myData.loadBookItemModels()
+        }
+//            private fun initializeBook() {
+//                viewModelScope.launch {
+//                    book.value = getBookFromDatabase()
+//                }
+//            }
 }

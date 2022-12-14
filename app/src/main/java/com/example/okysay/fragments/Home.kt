@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.okysay.AdapterGenre
-import com.example.okysay.Genre
 import com.example.okysay.R
+import com.example.okysay.adapter.AdapterGenre
+import com.example.okysay.adapter.Genre
 
 
 class Home : Fragment() {
