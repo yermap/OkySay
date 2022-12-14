@@ -1,4 +1,4 @@
-package com.example.okysay
+package com.example.okysay.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.example.okysay.R
 import com.example.okysay.adapter.AdapterBookDescription
 import com.example.okysay.adapter.BookDescription
 
 
-class bookInfo : Fragment() {
+class BookGenreDescription : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,11 +30,12 @@ class bookInfo : Fragment() {
     companion object {
         private val booksDescription = listOf(
             BookDescription(
-                image = R.drawable.elon_musk,
-                name = "Elon Musk",
-                author = "Steve Jobs",
-                book_time = "4 h. 18 min."
+                image = R.drawable.we,
+                name = "Think again",
+                author = "Adam Grant",
+                book_time = "7 h. 34 min."
             ),
+
         )
     }
 }

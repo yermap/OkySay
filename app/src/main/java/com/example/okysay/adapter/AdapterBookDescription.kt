@@ -33,7 +33,6 @@ class AdapterBookDescription(
         holder.bind(bookDescription[position])
     }
 
-
     override fun getItemCount() = bookDescription.size
 
     inner class ViewHolder(

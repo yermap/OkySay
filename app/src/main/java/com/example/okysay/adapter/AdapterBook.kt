@@ -18,12 +18,12 @@ class AdapterBook(
     private val mList = mutableListOf<BookItemModel>()
 
     override fun onCreateViewHolder(
-        parent: ViewGroup, viewType: Int): ViewHolder {
+        parent: ViewGroup, viewType: Int): AdapterBook.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_book, parent, false)
         return ViewHolder(v)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AdapterBook.ViewHolder, position: Int) {
         val model = mList[position]
 
         holder.itemAuthor.text = model.author
