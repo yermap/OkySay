@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".BookGenreDescription">
+    tools:context=".fragments.BookGenreDescription">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_books"
+        android:id="@+id/recycler_books2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

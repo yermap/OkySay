@@ -7,42 +7,42 @@
 
     <fragment
         android:id="@+id/hits"
-        android:name="com.example.okysay.Hits"
+        android:name="com.example.okysay.fragments.Hits"
         android:label="fragment_hits"
         tools:layout="@layout/fragment_hits" />
     <fragment
         android:id="@+id/home"
-        android:name="com.example.okysay.Home"
+        android:name="com.example.okysay.fragments.Home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/news"
-        android:name="com.example.okysay.New"
+        android:name="com.example.okysay.fragments.New"
         android:label="fragment_new"
         tools:layout="@layout/fragment_new" />
     <fragment
         android:id="@+id/player"
-        android:name="com.example.okysay.Player"
+        android:name="com.example.okysay.fragments.Player"
         android:label="fragment_player"
         tools:layout="@layout/fragment_player" />
     <fragment
         android:id="@+id/myBooks"
-        android:name="com.example.okysay.MyBooks"
+        android:name="com.example.okysay.fragments.MyBooks"
         android:label="fragment_my_books"
         tools:layout="@layout/fragment_my_books" />
     <fragment
         android:id="@+id/bookInfo"
-        android:name="com.example.okysay.bookInfo"
+        android:name="com.example.okysay.fragments.BookInfo"
         android:label="fragment_book_info"
         tools:layout="@layout/fragment_book_info" />
     <fragment
         android:id="@+id/newType"
-        android:name="com.example.okysay.NewType"
+        android:name="com.example.okysay.fragments.NewType"
         android:label="fragment_new_type"
         tools:layout="@layout/fragment_new_type" />
     <fragment 
         android:id="@+id/bookGenreDescription"
-        android:name="com.example.okysay.BookGenreDescription"
+        android:name="com.example.okysay.fragments.BookGenreDescription"
         android:label="book_genre_description"
         tools:layout="@layout/book_genre_description" />
 </navigation>

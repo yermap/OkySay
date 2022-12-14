@@ -1,4 +1,4 @@
-package com.example.okysay
+package com.example.okysay.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.okysay.databinding.ItemMyBooksBinding
+import com.example.okysay.viewmodel.MyBookitemModel
+import com.example.okysay.R
 
 
 class AdapterMyBooks(
@@ -16,12 +17,12 @@ class AdapterMyBooks(
 
     private val mList = mutableListOf<MyBookitemModel>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterMyBooks.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_my_books, parent, false)
         return ViewHolder(v)
     }
 
-    override fun onBindViewHolder(holder: AdapterMyBooks.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val model = mList[position]
 
         holder.itemAuthor.text = model.author

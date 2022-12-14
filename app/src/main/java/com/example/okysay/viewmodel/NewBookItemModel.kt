@@ -1,4 +1,4 @@
-package com.example.okysay
+package com.example.okysay.viewmodel
 
 data class NewBookItemModel(
     val image: Int,

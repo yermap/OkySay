@@ -1,4 +1,4 @@
-package com.example.okysay
+package com.example.okysay.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.okysay.R
+import com.example.okysay.adapter.AdapterMyBooks
 import com.example.okysay.databinding.FragmentMyBooksBinding
-
+import com.example.okysay.viewmodel.MyBookViewModel
 
 class MyBooks : Fragment() {
     private var _binding: FragmentMyBooksBinding? = null

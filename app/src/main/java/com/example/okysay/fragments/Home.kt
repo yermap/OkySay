@@ -1,4 +1,4 @@
-package com.example.okysay
+package com.example.okysay.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.okysay.databinding.FragmentHitsBinding
+import com.example.okysay.R
+import com.example.okysay.adapter.AdapterGenre
 import com.example.okysay.databinding.FragmentHomeBinding
+import com.example.okysay.viewmodel.HomeBookViewModel
 
 
 class Home : Fragment() {

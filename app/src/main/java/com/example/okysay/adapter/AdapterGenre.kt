@@ -1,4 +1,4 @@
-package com.example.okysay
+package com.example.okysay.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.okysay.R
 import com.example.okysay.databinding.ItemGenreBinding
+import com.example.okysay.viewmodel.HomeBookItemModel
 
 
 class AdapterGenre(

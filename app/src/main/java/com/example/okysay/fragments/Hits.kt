@@ -1,4 +1,4 @@
-package com.example.okysay
+package com.example.okysay.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,11 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.viewpager2.widget.ViewPager2
+import com.example.okysay.viewmodel.BookViewModel
+import com.example.okysay.R
+import com.example.okysay.viewmodel.SliderViewModel
+import com.example.okysay.adapter.AdapterBook
+import com.example.okysay.adapter.AdapterSlider
+import com.example.okysay.database.BookDatabase
 import com.example.okysay.databinding.FragmentHitsBinding
+import com.example.okysay.viewmodel.BookViewModelFactory
 
 
 class Hits : Fragment() {
@@ -22,12 +28,21 @@ class Hits : Fragment() {
     private val viewModel2: SliderViewModel by viewModels()
     private var adapterSlider: AdapterSlider? = null
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_hits, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View {
+        _binding = FragmentHitsBinding.inflate(inflater, container, false)
+
+        val application = requireActivity().application
+        // Create an instance of the ViewModel Factory.
+        val dataSource = BookDatabase.getInstance(application).bookDatabaseDao
+        val viewModelFactory = BookViewModelFactory(dataSource, application)
+
+        // Get a reference to the ViewModel associated with this fragment.
+        val bookViewModel =
+            ViewModelProvider(
+                this, viewModelFactory)[BookViewModel::class.java]
+        binding.bookViewModel = bookViewModel
+        binding.lifecycleOwner = this
         return binding.root
     }
 
@@ -47,12 +62,11 @@ class Hits : Fragment() {
                 adapterSlider?.setData(newSlider)
             }
         }
-
-        adapter = AdapterBook { model ->
+        adapter = AdapterBook {
             this@Hits.findNavController().navigate(R.id.bookInfo)
         }
         binding.recyclerBooks.adapter = adapter
-        binding.recyclerBooks.setLayoutManager(GridLayoutManager(activity, 2))
+        binding.recyclerBooks.layoutManager = GridLayoutManager(activity, 2)
         viewModel.data.observe(viewLifecycleOwner) {
                 newCount ->
             if (newCount != null) {

@@ -1,6 +1,5 @@
-package com.example.okysay
+package com.example.okysay.adapter
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +7,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.okysay.databinding.ItemNewBookBinding
+import com.example.okysay.viewmodel.NewBookItemModel
+import com.example.okysay.R
 
 
 class AdapterNewBook(
@@ -17,12 +17,12 @@ class AdapterNewBook(
 
     private val mList = mutableListOf<NewBookItemModel>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterNewBook.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item_new_book, parent, false)
         return ViewHolder(v)
     }
 
-    override fun onBindViewHolder(holder: AdapterNewBook.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val model = mList[position]
 
         holder.itemAuthor.text = model.author

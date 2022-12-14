@@ -1,8 +1,9 @@
-package com.example.okysay
+package com.example.okysay.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.okysay.Datasource
 
 class BookInfoViewModel : ViewModel() {
     private val _data = MutableLiveData<List<BookInfoItemModel>>(emptyList())
